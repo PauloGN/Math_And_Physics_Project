@@ -13,23 +13,23 @@ geometry::Vector2 geometry::Vector2::operator+(const Vector2& rhs)
 
 geometry::Vector2 geometry::Vector2::operator-(const Vector2& rhs)
 {
-	return Vector2(_x + rhs._x, _y - rhs._y);
+	return Vector2(_x - rhs._x, _y - rhs._y);
 }
 
 geometry::Vector2 geometry::Vector2::operator*(const Vector2& rhs)
 {
-	return Vector2(_x + rhs._x, _y * rhs._y);
+	return Vector2(_x * rhs._x, _y * rhs._y);
 }
 
 geometry::Vector2 geometry::Vector2::operator/(const Vector2& rhs)
 {
-	return Vector2(_x + rhs._x, _y / rhs._y);
+	return Vector2(_x / rhs._x, _y / rhs._y);
 }
 
 geometry::Vector2 geometry::Vector2::operator+=(const Vector2& rhs)
 {
 	
-	_x = _x + rhs._x;
+	_x += rhs._x;
 	_y = _y + rhs._y;
 
 	return *this;
@@ -60,7 +60,7 @@ geometry::Vector2 geometry::Vector2::operator/=(const Vector2& rhs)
 }
 
 // =================      Overload of increment and decrement operators
-
+//prefixed operator
 geometry::Vector2& geometry::Vector2::operator++()
 {
 	_y++;
@@ -78,6 +78,7 @@ geometry::Vector2& geometry::Vector2::operator--()
 	return *this;
 }
 
+//posfixed operator
 geometry::Vector2 geometry::Vector2::operator++(int)
 {
 
@@ -120,7 +121,7 @@ float geometry::Vector2::operator[](size_t idx)
 
 	if (idx < 0 || idx >1)
 	{
-		std::cout << " returning 0.0f by default";
+		std::cout << "Error returning 0.0f by default";
 		return 0.0f;
 	}
 

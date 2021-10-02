@@ -64,5 +64,7 @@ int main()
 	std::cout << "true or false(enemyPos == charPos): ";
 	(enemyPos == charPos) ? std::cout << "Yes(true)" : std::cout << "No(false)\n";
 
+
+
 	return 0;
 }
