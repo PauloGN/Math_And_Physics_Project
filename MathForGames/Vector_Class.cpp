@@ -1,135 +1,140 @@
 #include "Vector_Class.h"
 
-//Constructors
-geometry::Vector2::Vector2() :_x(0), _y(0) {}
-
-geometry::Vector2::Vector2(float x, float y) : _x(x), _y(y) {}
-
-//Operator Overload
-geometry::Vector2 geometry::Vector2::operator+(const Vector2& rhs)
-{
-	return Vector2(_x + rhs._x, _y + rhs._y);
-}
-
-geometry::Vector2 geometry::Vector2::operator-(const Vector2& rhs)
-{
-	return Vector2(_x - rhs._x, _y - rhs._y);
-}
-
-geometry::Vector2 geometry::Vector2::operator*(const Vector2& rhs)
-{
-	return Vector2(_x * rhs._x, _y * rhs._y);
-}
-
-geometry::Vector2 geometry::Vector2::operator/(const Vector2& rhs)
-{
-	return Vector2(_x / rhs._x, _y / rhs._y);
-}
-
-geometry::Vector2 geometry::Vector2::operator+=(const Vector2& rhs)
-{
-	
-	_x += rhs._x;
-	_y = _y + rhs._y;
-
-	return *this;
-}
-
-geometry::Vector2 geometry::Vector2::operator-=(const Vector2& rhs)
-{
-	_x = _x - rhs._x;
-	_y = _y - rhs._y;
-
-	return *this;
-}
-
-geometry::Vector2 geometry::Vector2::operator*=(const Vector2& rhs)
-{
-	_x = _x * rhs._x;
-	_y = _y * rhs._y;
-
-	return *this;
-}
-
-geometry::Vector2 geometry::Vector2::operator/=(const Vector2& rhs)
-{
-	_x = _x / rhs._x;
-	_y = _y / rhs._y;
-
-	return *this;
-}
-
-// =================      Overload of increment and decrement operators
-//prefixed operator
-geometry::Vector2& geometry::Vector2::operator++()
-{
-	_y++;
-	_x++;
-
-	return *this;
-}
+// ==============================     VECTOR 2 Testing ========================================\\
 
 
-geometry::Vector2& geometry::Vector2::operator--()
-{
-	_y--;
-	_x--;
-
-	return *this;
-}
-
-//posfixed operator
-geometry::Vector2 geometry::Vector2::operator++(int)
+void geometry::Vector2Test()
 {
 
-	Vector2 tempVec2 = *this;
-	++* this;
+	geometry::Vector2 enemyPos(2.0f, 2.0f);
+	geometry::Vector2 charPos(1.0f, 3.0f);
+	geometry::Vector2 result;
 
-	return tempVec2;
-}
+	//Operators tests
+	result = enemyPos + charPos;
+	std::cout << "sum: ";
+	result.PrintVector2();
 
-geometry::Vector2 geometry::Vector2::operator--(int)
-{
-	Vector2 tempVec2 = *this;
-	--* this;
+	result = enemyPos - charPos;
+	std::cout << "Subtraction: ";
+	result.PrintVector2();
 
-	return tempVec2;
-}
+	result = enemyPos / charPos;
+	std::cout << "Division: ";
+	result.PrintVector2();
 
-bool geometry::Vector2::operator==(const Vector2& rhs)
-{
+	result = enemyPos * charPos;
+	std::cout << "Multiplication: ";
+	result.PrintVector2();
 
-	if (_x == rhs._x && _y == rhs._y)
-	{
-		return true;
-	}
+	std::cout << "vector2[0]: " << result[0] << " and " << "vector2[1]: " << result[1];
 
-	return false;
-}
+	std::cout << "\n\t===============================================================\n\n";
+	std::cout << "enemypos: ";
+	enemyPos.PrintVector2();
+	std::cout << "enemyPos += enemypos: ";
+	(enemyPos += enemyPos).PrintVector2();
+	std::cout << "enemyPos -= enemypos: ";
+	(enemyPos -= enemyPos).PrintVector2();
 
-float geometry::Vector2::operator[](size_t idx)
-{
+	std::cout << "\n\t===============================================================\n\n";
 
-	if (idx == 0)
-	{
-		return _x;
-	}
-	if (idx == 1)
-	{
-		return _y;
-	}
+	std::cout << "CharPos:";
+	charPos.PrintVector2();
+	std::cout << "++CharPos:";
+	++charPos;
+	charPos.PrintVector2();
+	std::cout << "CharPos++:";
+	charPos++;
+	charPos.PrintVector2();
 
-	if (idx < 0 || idx >1)
-	{
-		std::cout << "Error returning 0.0f by default";
-		return 0.0f;
-	}
+	std::cout << "\n\t===============================================================\n\n";
+
+	std::cout << "CharPos:";
+	charPos.PrintVector2();
+	std::cout << "--CharPos:";
+	--charPos;
+	charPos.PrintVector2();
+	std::cout << "CharPos--:";
+	charPos--;
+	charPos.PrintVector2();
+
+	std::cout << "\n\t===============================================================\n\n";
+
+	std::cout << "true or false(enemyPos == charPos): ";
+	(enemyPos == charPos) ? std::cout << "Yes(true)" : std::cout << "No(false)\n";
+	std::cout << "\n\t=========================  Friend Function operator<<   ===============================\n\n";
+	std::cout << charPos;
+	std::cout << "\n\t===============================================================\n\n";
 
 }
 
-//Print
-void geometry::Vector2::PrintVector2()
-{
-	std::cout << "(" << _x << "," << _y << ")" << std::endl;
-}
+// ==============================     VECTOR 3 Testing ========================================\\
 
+void geometry::Vector3Test()
+{
+
+	geometry::Vector3 enemyPos(2.0f, 2.0f,10.5f);
+	geometry::Vector3 charPos(1.0f, 3.0f,4.3f);
+	geometry::Vector3 result;
+
+	//Operators tests
+	result = enemyPos + charPos;
+	std::cout << "sum: ";
+	std::cout << result << std::endl;
+
+	result = enemyPos - charPos;
+	std::cout << "Subtraction: ";
+	std::cout << result << std::endl;
+
+	result = enemyPos / charPos;
+	std::cout << "Division: ";
+	std::cout << result << std::endl;
+
+	result = enemyPos * charPos;
+	std::cout << "Multiplication: ";
+	std::cout << result << std::endl;
+
+	std::cout << "vector2[0]: " << result[0] << " and " << "vector2[1]: " << result[1];
+
+	std::cout << "\n\t===============================================================\n\n";
+	std::cout << "enemypos: ";
+	std::cout << enemyPos << std::endl;
+
+	std::cout << "enemyPos += enemypos: ";
+	std::cout<<(enemyPos += enemyPos)<<std::endl;
+	std::cout << "enemyPos -= enemypos: ";
+	std::cout << (enemyPos -= enemyPos) << std::endl;
+
+
+	std::cout << "\n\t===============================================================\n\n";
+
+	std::cout << "CharPos:";
+	std::cout<<charPos<<std::endl;
+	std::cout << "++CharPos:";
+	++charPos;
+	std::cout << charPos << std::endl;
+	std::cout << "CharPos++:";
+	charPos++;
+	std::cout << charPos << std::endl;
+
+	std::cout << "\n\t===============================================================\n\n";
+
+	std::cout << "CharPos:";
+	std::cout << charPos << std::endl;
+	std::cout << "--CharPos:";
+	--charPos;
+	std::cout << charPos << std::endl;
+	std::cout << "CharPos--:";
+	charPos--;
+	std::cout << charPos << std::endl;
+
+	std::cout << "\n\t===============================================================\n\n";
+
+	std::cout << "true or false(enemyPos == charPos): ";
+	(enemyPos == charPos) ? std::cout << "Yes(true)" : std::cout << "No(false)\n";
+	std::cout << "\n\t=========================  Friend Function operator<<   ===============================\n\n";
+	std::cout << charPos;
+	std::cout << "\n\t===============================================================\n\n";
+
+}

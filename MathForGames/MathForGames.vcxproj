@@ -143,6 +143,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeometryTest.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector3.cpp" />
     <ClCompile Include="Vector_Class.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

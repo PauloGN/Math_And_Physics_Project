@@ -23,11 +23,17 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Vector_Class.cpp">
-      <Filter>geometry</Filter>
-    </ClCompile>
     <ClCompile Include="GeometryTest.cpp">
       <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector_Class.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

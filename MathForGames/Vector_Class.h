@@ -37,7 +37,15 @@ namespace geometry
 		//Access Operator
 		float operator[](size_t idx);
 
+		friend std::ostream& operator<<(std::ostream& os, const Vector2& vec)
+		{
 
+			os << "("<<vec._x<<","<<vec._y<<")";
+
+			return os;
+		}
+					
+				
 		void PrintVector2();
 
 	private:
@@ -84,13 +92,27 @@ namespace geometry
 		//Access Operator
 		float operator[](size_t idx);
 
-		void PrintVector3();
+		friend std::ostream& operator<<(std::ostream& os, const Vector3& vec)
+		{
+			os << "(" << vec._x << "," << vec._y<<","<< vec._z << ")";
+
+			return os;
+		}
+
+		//void PrintVector3();
 
 	private:
 
 		float _x, _y, _z;
 
 	};
+
+
+	// Testing VECTORS 
+
+	void Vector2Test();
+	void Vector3Test();
+
 
 }
 
