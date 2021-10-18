@@ -13,27 +13,5 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="geometry">
-      <UniqueIdentifier>{4747d513-cb21-4cf5-94c3-438cbb03493b}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Vector_Class.h">
-      <Filter>geometry</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="GeometryTest.cpp">
-      <Filter>geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2.cpp">
-      <Filter>geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector3.cpp">
-      <Filter>geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector_Class.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
