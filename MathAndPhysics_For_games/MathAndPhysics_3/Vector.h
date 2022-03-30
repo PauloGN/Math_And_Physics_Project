@@ -65,9 +65,9 @@ public:
 	Vector3(float x, float y, float z);
 
 	// Define accessor functions.
-	int x() { return _x; }
-	int y() { return _y; }
-	int z() { return _z; }
+	float x() { return _x; }
+	float y() { return _y; }
+	float z() { return _z; }
 
 	// operator overloads	 
 	Vector3 operator+(const Vector3& rhs);
