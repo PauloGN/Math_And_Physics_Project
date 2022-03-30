@@ -3,7 +3,7 @@
 
 TEST(Vector2, Constructors) 
 {
-	//Default Constructor
+	//Default Constructor in test
 	{
 		geometry::Vector2 vector2;
 	
